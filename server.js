@@ -13,13 +13,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+//routes
+app.use("/api/v1/portfolio", require("./routes/portfolioRoute"));
+
 // Root route
 app.get('/', (req, res) => {
     res.send('Welcome to the API!');
 });
 
-//routes
-app.use("/api/v1/portfolio", require("./routes/portfolioRoute"));
 
 
 //port
